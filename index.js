@@ -14,8 +14,14 @@ app.use(express.urlencoded({ extended: true }))
 
 //controllers
 
-
+app.use('/users', require('./controllers/users_controller'))
 //app listen
+
+
+app.get('/',(req, res)=>{
+    res.send('welcome to bender you cheeky fuck')
+} )
+
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Listening on Port: ${process.env.PORT}`)
