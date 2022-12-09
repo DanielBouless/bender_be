@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 //controllers
 
 app.use('/users', require('./controllers/users_controller'))
+app.use('/authentication', require('./controllers/authentication'))
 //app listen
 
 
