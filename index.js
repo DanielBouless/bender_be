@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const defineCurrentUser = require('./middleware/defineCurrentUser')
 
 
 //Express Settings
@@ -10,8 +11,8 @@ const cors = require('cors')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
-
-
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(defineCurrentUser)
 //controllers
 
 app.use('/users', require('./controllers/users_controller'))

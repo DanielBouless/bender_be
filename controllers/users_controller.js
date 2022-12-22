@@ -10,7 +10,6 @@ router.post('/', async(req, res)=> {
         const user = await User.create({
             ...rest, passwordDigest: await bcrypt.hash(password,10)
         })
-        res.redirect('/login')
     }
     )
 

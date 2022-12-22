@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
             message: 'No User with provided credentials'
         })
     } else {
-        const result = await jwt.encode(process.env.JWT_SECRET, { id: user.userID })
+        const result = await jwt.encode(process.env.JWT_SECRET, { id: user.userId })
         res.json({user: user, token: result.value })
     }
 })
