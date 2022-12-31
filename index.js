@@ -12,7 +12,7 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
-app.use(defineCurrentUser)
+//app.use(defineCurrentUser)
 //controllers
 
 app.use('/users', require('./controllers/users_controller'))
